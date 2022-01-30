@@ -1,10 +1,10 @@
-/src/fireabe.js
+/src/firebase.js
 # dependencies
 /node_modules
 
 /.pnp
 .pnp.js
-
+/src/firebase.js
 # testing
 /coverage
 

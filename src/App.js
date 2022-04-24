@@ -1,14 +1,15 @@
-import logo from './logo.svg';
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
 import { BrowserRouter, Route, Router, Switch } from 'react-router-dom';
 import Navbar from './Navbar';
 import Home from './Home';
 import Galleries from './Galleries';
 import Gallery from './Gallery';
+import Modal from './Modal';
 import './index.css';
 
 function App() {
+  const [selectedImg, setSelectedImg] = useState(null);
   return (
     <div className="App">
       <BrowserRouter>
@@ -21,7 +22,13 @@ function App() {
             <Galleries />
           </Route>
           <Route path="/:id">
-            <Gallery />
+            <Gallery setSelectedImg={setSelectedImg} />
+            {selectedImg && (
+              <Modal
+                selectedImg={selectedImg}
+                setSelectedImg={setSelectedImg}
+              />
+            )}
           </Route>
         </Switch>
       </BrowserRouter>

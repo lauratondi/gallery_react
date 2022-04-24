@@ -6,13 +6,14 @@ const GalleryItem = ({ gallery }) => {
   return (
     <div>
       <aside>
-        <img
-          src={gallery.images ? gallery.images[0].url : 'no images'}
-          alt="gallery"
-        />
-        <h3>{gallery.title}</h3>
-        <p>{gallery.description}</p>
-        <Link to={`${gallery.id}`}>View</Link>
+        <Link to={`${gallery.id}`}>
+          <img
+            src={gallery.images ? gallery.images[0].url : 'no images'}
+            alt="gallery"
+          />
+          <h3>{gallery.title}</h3>
+          <p>{gallery.description}</p>
+        </Link>
       </aside>
     </div>
   );
